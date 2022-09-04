@@ -39,7 +39,12 @@ const EditModal = ({ edit, cancel, isOpen, user }: EditModalProps) => {
 
   return (
     <>
-      <Modal title="Edit" visible={isOpen} onCancel={cancel} footer={[<></>]}>
+      <Modal
+        title="Edit"
+        visible={isOpen}
+        onCancel={cancel}
+        footer={[<div key="nothing"></div>]}
+      >
         <Form {...layout} form={form} name="edit-modal" onFinish={edit}>
           <Form.Item name="id" className="hidden">
             <Input type="hidden" />

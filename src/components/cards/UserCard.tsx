@@ -38,16 +38,26 @@ const UserCard = ({ user, loading, favorite, remove, edit }: UserCardProps) => {
               key="setting"
               style={{ color: "#eb2f96" }}
               onClick={() => favorite(user.id)}
+              data-testid="favorite-checked"
             />
           ) : (
             <HeartTwoTone
               twoToneColor="#eb2f96"
               key="setting"
               onClick={() => favorite(user.id)}
+              data-testid="favorite-not-checked"
             />
           ),
-          <EditOutlined key="edit" onClick={() => edit(user)} />,
-          <DeleteFilled key="ellipsis" onClick={() => remove(user)} />,
+          <EditOutlined
+            key="edit"
+            onClick={() => edit(user)}
+            data-testid="edit-button"
+          />,
+          <DeleteFilled
+            key="ellipsis"
+            onClick={() => remove(user)}
+            data-testid="remove-button"
+          />,
         ]}
         loading={loading}
       >
